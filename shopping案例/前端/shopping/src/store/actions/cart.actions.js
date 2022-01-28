@@ -8,6 +8,12 @@ export const loadCarts =  createAction('loadCarts')
 //购物车数据同步本地
 export const loadCartsToLocal = createAction('loadCartsToLocal') 
 
+//删除服务端商品
 export const removeProductToCart =  createAction('removeProductToCart')
-
+//删除store中的数据
 export const removeProductToLocalCart = createAction('removeProductToLocalCart') 
+
+//更新服务端商品数量
+export const changeServerProductNumber =  createAction('changeServerProductNumber')
+//更新store中的数据
+export const changeLocalProductNumber = createAction('changeLocalProductNumber') 

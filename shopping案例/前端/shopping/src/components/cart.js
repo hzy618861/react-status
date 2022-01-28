@@ -22,7 +22,7 @@ import * as cartActions from '../store/actions/cart.actions'
                 </div>
                 <span className="cart-price cart-column">￥{item.price}</span>
                 <div className="cart-quantity cart-column">
-                    <input className="cart-quantity-input" value={item.count}  onChange={()=>{}} type="number"/>
+                    <input className="cart-quantity-input" value={item.count}  onChange={e=>{this.changeProductNumber(item.id,e)}} type="number"/>
                     <button onClick={()=>removeProductToCart(item.id)} className="btn btn-danger" type="button">删除</button>
                 </div>
             </div>
@@ -34,6 +34,12 @@ import * as cartActions from '../store/actions/cart.actions'
              <span className="cart-total-price">￥39.97</span>
          </div>
      </section>
+    }
+    changeProductNumber(cid,e){
+        const {changeServerProductNumber} = this.props
+        const count =e.target.value
+        //向服务器请求更新商品数量
+        changeServerProductNumber({cid,count})
     }
     componentDidMount(){
           const {loadCarts} = this.props
