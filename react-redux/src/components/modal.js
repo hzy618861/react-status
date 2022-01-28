@@ -14,7 +14,7 @@ function Modal(props){
           display:props.showStatus?'block':"none"
       }
       return <div>
-          <button onClick={props.show}>显示</button>
+          <button onClick={props.show_async}>显示</button>
           <button onClick={props.hide}>隐藏</button>
           <div style={styles}></div>
       </div>
