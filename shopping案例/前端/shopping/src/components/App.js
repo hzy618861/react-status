@@ -3,8 +3,8 @@ import Cart from './cart'
 function App() {
   return (
     <div className="App">
-        <Cart/>
         <Product/>
+        <Cart/>
     </div>
   );
 }
