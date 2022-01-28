@@ -1,10 +1,16 @@
 
 import React,{ Component } from "react";
-
-export default class Product extends Component {
+import {connect} from 'react-redux'
+class Product extends Component {
     render(){
+         const {products} = this.props
          return     <section className="container content-section">
          <h2 className="section-header">商品列表</h2>
+         <div>
+             {
+                 products
+             }   
+         </div>
          <div className="shop-items">
              <div className="shop-item">
                  <img className="shop-item-image" src="images/01.webp" />
@@ -42,3 +48,7 @@ export default class Product extends Component {
      </section>
     }
 }
+const mapStateToProps = state => ({
+     products:state.products
+})
+export default  connect(mapStateToProps)(Product)
