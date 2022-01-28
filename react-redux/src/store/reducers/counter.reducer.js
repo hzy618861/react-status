@@ -4,14 +4,14 @@ import {increment,decrement} from '../actions/counter.action'
 const initState = {
     count: 0
   }
-  function handleIncrement(state,count){
+  function handleIncrement(state,action){
      return {
-       count:state.count+1
+       count:state.count+action.payload
      }
   }
-  function handleDecrement(state,count){
+  function handleDecrement(state,action){
     return {
-      count:state.count-1
+      count:state.count-action.payload
     }
  }
   export default createReducer({
