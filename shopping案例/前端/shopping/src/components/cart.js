@@ -17,7 +17,7 @@ import * as cartActions from '../store/actions/cart.actions'
                carts.map(item=>(
                 <div className="cart-row" key={item.id}>
                 <div className="cart-item cart-column">
-                    <img className="cart-item-image" src={item.thumbnail} width="100" height="100" />
+                    <img className="cart-item-image" src={`http://localhost:3005/${item.thumbnail}`} width="100" height="100" />
                     <span className="cart-item-title">{item.title}</span>
                 </div>
                 <span className="cart-price cart-column">￥{item.price}</span>
@@ -31,7 +31,9 @@ import * as cartActions from '../store/actions/cart.actions'
          </div>
          <div className="cart-total">
              <strong className="cart-total-title">总价</strong>
-             <span className="cart-total-price">￥39.97</span>
+             <span className="cart-total-price">￥{carts.reduce((total,product)=>{
+                 return total+= product.count*product.price
+             },0)}</span>
          </div>
      </section>
     }

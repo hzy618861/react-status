@@ -33,7 +33,12 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => bindActionCreators(counterActions,dispatch)
-//bindActionCreators会帮助我们生成下述d对象
+//bindActionCreators接收action函数会帮助我们生成下述对象 bindActionCreators(actions对象,dispatch)
+//actions函数
+/**
+ * function incremnet(){return {type:"increment"} }
+ * 
+ */
 //{
     // incremnet(){
     //     dispatch({type:"increment"})
